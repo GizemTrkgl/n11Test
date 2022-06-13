@@ -28,33 +28,24 @@ public class homePage {
         driver.get("https://www.n11.com/");
     }
     public void checkHomePage() {
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(home));
         driver.findElement(home);
     }
 
     public void searchProduct(String string){
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(search));
         driver.findElement(search).sendKeys(string);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
     public void clickSearchButton(){
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(button));
         driver.findElement(button).click();
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(searchButton));
         driver.findElement(searchButton).click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
     public void checkSearchPage(){
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(checkSearchPage));
         driver.findElement(checkSearchPage);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
     }
 
 
